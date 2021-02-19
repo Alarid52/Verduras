@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+
+    <h1>Registro</h1>
+
+    <div class="container">
+        <form action="{{url_for('registro')}}" method="POST">
+            {{ reg_form.csrf_token }}
+            {{ reg_form.username.label}}
+            {{ reg_form.username(class_="form-control")}}
+            {{ reg_form.email.label}}
+            {{ reg_form.email(class_="form-control")}}
+            {{ reg_form.password.label}}
+            {{ reg_form.password(class_="form-control")}}
+            {{ reg_form.confirm.label}}
+            {{ reg_form.confirm(class_="form-control")}}
+            <br>
+            {{ reg_form.submit}}
+            
+        </form>
+    </div>
+{% endblock %}
